@@ -61,7 +61,7 @@ yum install cephadm -y
 
 # 引导新集群
 
-本操作将创建 Ceph 集群的第一个"监控守护程序”，后期Ceph 会随着集群的增长自动部署监控守护程序，Ceph 会在集群收缩时自动缩减监控守护进程。此自动增长和收缩的顺利执行取决于正确的子网配置。如果集群中的所有 ceph 监控守护程序都位于同一子网中，则无需手动管理 ceph 监控守护程序。 将根据需要自动向子网添加多个监视器，因为新主机已添加到群集
+本操作将创建 Ceph 集群的第一个"Mon守护程序”，后期Ceph 会随着集群的增长自动部署Mon守护程序，Ceph 会在集群收缩时自动缩减Mon守护进程。此自动增长和收缩的顺利执行取决于正确的子网配置。如果集群中的所有 ceph Mon守护程序都位于同一子网中，则无需手动管理 ceph Mon守护程序。 将根据需要自动向子网添加多个Mon，因为新主机已添加到群集
 
 要将 Ceph 集群配置为在单个主机上运行，请在引导时使用--single-host-defaults标志
 
@@ -167,19 +167,19 @@ Bootstrap complete.
 
 上述命令将：
 
-1. 为本地主机上的新群集创建监视器和管理器守护程序。
+1. 为本地主机上的新群集创建Mon和Mgr守护程序。
 
 2. 为 Ceph 集群生成新的 SSH 密钥，并将其添加到root用户的文件: /root/.ssh/authorized_keys
 
 3. 将公钥的副本写入: /etc/ceph/ceph.pub
 
-4. 将最小配置文件写入/etc/ceph/ceph.conf，需要此文件才能与新群集进行通信。
+4. 将最小配置文件写入/etc/ceph/ceph.conf，需要此文件才能与新群集进行通信
 
 5. 将管理（特权 client.admin） 密钥的副本写入: /etc/ceph/ceph.client.admin.keyring
 
-6. 将标签添加到引导主机。默认情况下，任何具有此标签的主机都将（也）获得 和 的副本。_admin, /etc/ceph/ceph.conf, /etc/ceph/ceph.client.admin.keyring
+6. 将_admin标签添加到引导主机，默认情况下，任何具有此标签的主机都将（也）获得/etc/ceph/ceph.conf和/etc/ceph/ceph.client.admin.keyring的副本
 
-目前我们需要继续完成集群，我们需要先扩展集群，因为我们只有一个mon节点，没有osd等其他节点，集群状态为HEALTH_WARN无法开始工作
+目前我们需要继续完成集群，需要先扩展集群，因为我们只有一个mon节点，没有osd等其他节点，集群状态为HEALTH_WARN无法开始工作
 
 ```bash
 [root@host1 ~]# cephadm shell -- ceph -s
