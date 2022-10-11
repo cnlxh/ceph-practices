@@ -202,15 +202,17 @@ docker push registry.xiaohui.cn/library/snmp-notifier:v1.2.1
 
 ## 先决条件
 
-如果这个也需要离线
+如果这个也需要离线，在有网的服务器上完成：
 
 1. 在仓库文件中加上keepcache=1
 
-2. 从/var/cache/dnf中去find rpm后缀的文件
+2. 完成软件安装
 
-3. 用createrepo命令生成元数据
+3. 从/var/cache/dnf中去find rpm后缀的文件
 
-4. 将元数据和rpm一起放到内网http服务器
+4. 用createrepo命令生成元数据
+
+5. 将元数据和rpm一起放到内网http服务器
 
 ```bash
 yum install podman chrony lvm2 systemd python3 -y
