@@ -1,12 +1,16 @@
-```bash
+```textfile
+作者：李晓辉
+
+联系方式：
+
+1. 微信：Lxh_Chat
+
+2. QQ：939958092
+
+3. 邮箱：xiaohui_li@foxmail.com
 
 ```
 
-微信：Lxh_Chat
-
-邮箱：xiaohui_li@foxmail.com
-
-```
 | 角色     | IP            | 平台              | 备注       |
 | ------ | ------------- | --------------- | -------- |
 | harbor | 172.16.50.200 | CentOS 8 Stream |          |
@@ -308,11 +312,7 @@ ceph -s
   progress:
     Updating alertmanager deployment (+1 -> 1) (0s)
       [............................]
-
-
 ```
-
-
 
 ## 增加OSD
 
@@ -333,7 +333,6 @@ mon                                         1/5  7s ago     7m   count:5
 node-exporter              ?:9100           1/1  7s ago     7m   *
 osd.all-available-devices                     3  7s ago     12s  *
 prometheus                 ?:9095           1/1  7s ago     7m   count:1
-
 ```
 
 ## 查询Ceph进程状态
@@ -352,9 +351,6 @@ osd.0                       ceph.xiaohui.cn               running (3m)     19s a
 osd.1                       ceph.xiaohui.cn               running (3m)     19s ago   3m    70.6M    4096M  17.2.4   652a1437d122  6429f6f3ae70
 osd.2                       ceph.xiaohui.cn               running (2m)     19s ago   2m    64.3M    4096M  17.2.4   652a1437d122  287030daade5
 prometheus.ceph             ceph.xiaohui.cn  *:9095       running (68s)    19s ago  68s    37.8M        -           514e6a882f6e  5bda216eaa8a
-
 ```
 
 一切正常
-
-
