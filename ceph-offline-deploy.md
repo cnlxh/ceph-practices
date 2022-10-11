@@ -8,7 +8,6 @@
 2. QQ：939958092
 
 3. 邮箱：xiaohui_li@foxmail.com
-
 ```
 
 | 角色     | IP            | 平台              | 备注       |
@@ -222,7 +221,7 @@ reboot
 
 如果放在了内网服务器，baseurl用内网的
 
-```ini
+```bash
 cat > /etc/yum.repos.d/cephadm.repo << eof
 [cephadm]
 name=cephadm lixiaohui write
